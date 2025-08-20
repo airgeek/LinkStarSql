@@ -1,0 +1,8 @@
+感谢你安装 linkstarsql
+你必须要用完整的py运行环境
+注意安装以下pip包：
+ websocket
+ contextlib
+ closing
+ requests
+ prettytable
