@@ -1,0 +1,20 @@
+{
+    "schema_version": "0.1",
+    "packages": [
+        {
+            "name": "星罗sql",
+            "description": "sub插件，可划词调起sql查询",
+            "author": "杨卓",
+            "homepage": "https://github.com/airgeek/LinkStarSql",
+            "last_modified": "2025-08-20",
+            "platforms": {
+                "*": [
+                    {
+                        "version": "0.1",
+                        "url": "https://nodeload.github.com/airgeek/LinkStraSql/zip/main"
+                    }
+                ]
+            }
+        }
+    ]
+}
