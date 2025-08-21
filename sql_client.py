@@ -47,7 +47,7 @@ class local_sql:
 		try:
 			with open(self.token_path, 'r', encoding='utf-8') as e:
 				self.token, self.email = self.trans(e.read()).split(',')
-				# self.log(f'读取本地token:{self.token},{self.email}')
+				self.log(f'读取本地token:{self.token},{self.email}')
 		except:
 			self.log('凭证异常,打开浏览器获取')
 			self.get_token_from_webbrowser()
@@ -143,7 +143,7 @@ class local_sql:
 			}
 
 		c = {"id":self.task_id}
-		现在 = time.time()
+		now = time.time()
 		while True:
 			# 超时
 			if time.time() - now >= 60:
