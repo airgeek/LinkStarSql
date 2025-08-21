@@ -55,6 +55,5 @@ class LinkStarSqlCommand(sublime_plugin.TextCommand):
 		# 运行脚本
 		view.window().run_command("exec",{
 						'cmd':['python','-u',client_path,sql_bs64], # 执行同目录入的脚本
-						"env": {"PYTHONIOENCODING": "utf-8"}, # 打印时避免乱码
-						"working_dir": os.path.dirname(os.path.abspath(__file__)) # 插件文件路径
+						"env": {"PYTHONIOENCODING": "utf-8"} # 打印时避免乱码
 						})
