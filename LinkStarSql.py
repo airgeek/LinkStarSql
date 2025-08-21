@@ -38,7 +38,7 @@ class LinkStarSqlCommand(sublime_plugin.TextCommand):
 		sql_bs64 = base64.b64encode(s.encode('utf-8')).decode('utf-8') # 进行base64编码
 
 		# 运行脚本
-		view.window().run_command("exec"，{
+		view.window().run_command("exec",{
 						'cmd':['python','-u','sql_client.py',sql_bs64], # 执行同目录入的脚本
 						"env": {"PYTHONIOENCODING": "utf-8"}, # 打印时避免乱码
 						"working_dir": os.path.dirname(os.path.abspath(__file__)) # 插件文件路径
