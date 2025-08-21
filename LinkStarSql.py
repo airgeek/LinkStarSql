@@ -37,9 +37,24 @@ class LinkStarSqlCommand(sublime_plugin.TextCommand):
 			
 		sql_bs64 = base64.b64encode(s.encode('utf-8')).decode('utf-8') # 进行base64编码
 
+		# 准备客户端
+		client = 'sql_client.py'
+		appdata = os.getenv('APPDATA')
+		client_path = os.path.join(appdata ,client)
+		if not os.path.exists(client_path):
+			print("sql_client.py未找到,正在配置...")
+			import zipfile
+			packge_path = sublime.installed_packages_path()
+			zip_file = os.path.join(packge_path,'LinkStarSql.sublime-package')
+			with zipfile.Zipfile(zip_file, 'r') as zf:
+				for name in zf.namelist():
+					if name.endswith(client):
+						zf.extract(name,appdata)
+			print('已释放')
+
 		# 运行脚本
 		view.window().run_command("exec",{
-						'cmd':['python','-u','sql_client.py',sql_bs64], # 执行同目录入的脚本
+						'cmd':['python','-u',client_path,sql_bs64], # 执行同目录入的脚本
 						"env": {"PYTHONIOENCODING": "utf-8"}, # 打印时避免乱码
 						"working_dir": os.path.dirname(os.path.abspath(__file__)) # 插件文件路径
 						})
