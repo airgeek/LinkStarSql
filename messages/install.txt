@@ -6,3 +6,5 @@
  closing
  requests
  prettytable
+----------------
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple prettytable requests pyperclip
