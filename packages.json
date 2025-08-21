@@ -1,5 +1,5 @@
 {
-    "schema_version": "1.0",
+    "schema_version": "1.0.0",
     "packages": [
         {
             "name": "星罗sql",
@@ -10,8 +10,8 @@
             "platforms": {
                 "*": [
                     {
-                        "version": "0.1",
-                        "url": "https://nodeload.github.com/airgeek/LinkStarSql/zip/1.0.0"
+                        "version": "1.0.0",
+                        "url": "https://nodeload.github.com/airgeek/LinkStarSql/zip/v1.0.0"
                     }
                 ]
             }
