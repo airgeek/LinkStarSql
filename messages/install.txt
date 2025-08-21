@@ -1,10 +1,4 @@
 感谢你安装 linkstarsql
 你必须要用完整的py运行环境
-注意安装以下pip包：
- websocket
- contextlib
- closing
- requests
- prettytable
-----------------
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple prettytable requests pyperclip websocket
+请手动运行以下命令，以安装所需库
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple prettytable requests pyperclip websocket-client
