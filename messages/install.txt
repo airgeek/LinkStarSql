@@ -7,4 +7,4 @@
  requests
  prettytable
 ----------------
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple prettytable requests pyperclip
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple prettytable requests pyperclip websocket
