@@ -1,5 +1,6 @@
 ## LinkStarSql
 
+注意本插件需要依赖公司内部系统支持。
 LinkStarSql 是一款 Sublime Text 插件，可以直接在编辑器中运行 SQL 查询，无需切换到外部工具。它会将选中的 SQL（如果没有选中，则使用整个文件内容）发送到内部 SQL 查询系统，并在 Sublime 的输出面板显示查询结果。
 
 ⸻
