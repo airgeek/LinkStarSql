@@ -47,8 +47,7 @@ class local_sql:
 		try:
 			with open(self.token_path, 'r', encoding='utf-8') as e:
 				self.token, self.email = self.trans(e.read()).split(',')
-				s = '读取本地token:' + self.token + self.email
-				self.log(s)
+				self.log(f'读取本地token:{self.token},{self.email}')
 		except:
 			self.log('凭证异常,打开浏览器获取')
 			self.get_token_from_webbrowser()
@@ -68,8 +67,7 @@ class local_sql:
 					rsp = json.loads(rsp)
 					email = rsp['body']['email']
 					with open(self.token_path, 'w', encoding='utf-8') as f:
-						s = token + email
-						f.write(self.trans(s))
+						f.write(self.trans(f'{token},{email}'))
 
 					return self.set_token()
 				else:
@@ -90,8 +88,8 @@ class local_sql:
 			}
 		c_str = json.dumps(c,ensure_ascii=False,separators=(',', ':'))
 		c_quote = quote(c_str)
-		c_len = str(len(re.findall(r'%..|.',c_quote)))
-		body = ["SEND\nContent-Type:application/json;charset=utf-8\ndestination:/app/execute\ncontent-length:" + c_len + "\n\n{c_str}\u0000"]
+		c_len = len(re.findall(r'%..|.',c_quote))
+		body = [f"SEND\nContent-Type:application/json;charset=utf-8\ndestination:/app/execute\ncontent-length:{c_len}\n\n{c_str}\u0000"]
 		return body
 
 	def set_linkstar_url(self):
