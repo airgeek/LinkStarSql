@@ -1,7 +1,7 @@
 [
     {
         "caption": "星罗sql",  
-        "command": "LinkStarSql", 
+        "command": "link_star_sql", 
 
         "context": [
         ]
