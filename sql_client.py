@@ -90,8 +90,8 @@ class local_sql:
 			}
 		c_str = json.dumps(c,ensure_ascii=False,separators=(',', ':'))
 		c_quote = quote(c_str)
-		c_len = len(re.findall(r'%..|.',c_quote))
-		body = [f"SEND\nContent-Type:application/json;charset=utf-8\ndestination:/app/execute\ncontent-length:{c_len}\n\n{c_str}\u0000"]
+		c_len = str(len(re.findall(r'%..|.',c_quote)))
+		body = ["SEND\nContent-Type:application/json;charset=utf-8\ndestination:/app/execute\ncontent-length:" + c_len + "\n\n{c_str}\u0000"]
 		return body
 
 	def set_linkstar_url(self):
