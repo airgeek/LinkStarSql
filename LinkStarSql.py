@@ -46,7 +46,7 @@ class LinkStarSqlCommand(sublime_plugin.TextCommand):
 			import zipfile
 			packge_path = sublime.installed_packages_path()
 			zip_file = os.path.join(packge_path,'LinkStarSql.sublime-package')
-			with zipfile.Zipfile(zip_file, 'r') as zf:
+			with zipfile.ZipFile(zip_file, 'r') as zf:
 				for name in zf.namelist():
 					if name.endswith(client):
 						zf.extract(name,appdata)
