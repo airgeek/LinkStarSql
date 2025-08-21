@@ -35,7 +35,7 @@ class LinkStarSqlCommand(sublime_plugin.TextCommand):
 		if len(s) == 0:
 			raise ValueError('sql语句不能为空')
 			
-		sql_bs64 = base64.b64encode(s.encode('utf-8'))。decode('utf-8') # 进行base64编码
+		sql_bs64 = base64.b64encode(s.encode('utf-8')).decode('utf-8') # 进行base64编码
 
 		# 运行脚本
 		view.window().run_command("exec"，{
