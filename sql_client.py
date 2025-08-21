@@ -47,7 +47,7 @@ class local_sql:
 		try:
 			with open(self.token_path, 'r', encoding='utf-8') as e:
 				self.token, self.email = self.trans(e.read()).split(',')
-				s = f'读取本地token:{self.token},{self.email}'
+				s = '读取本地token:' + self.token + self.email
 				self.log(s)
 		except:
 			self.log('凭证异常,打开浏览器获取')
@@ -68,7 +68,7 @@ class local_sql:
 					rsp = json.loads(rsp)
 					email = rsp['body']['email']
 					with open(self.token_path, 'w', encoding='utf-8') as f:
-						s = f'{token},{email}'
+						s = token + email
 						f.write(self.trans(s))
 
 					return self.set_token()
