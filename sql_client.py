@@ -79,10 +79,10 @@ class local_sql:
 	def get_sql_body(self,sql:str):
 		'''将sql代码,转换为请求体'''
 		c = {
-			"dataSourceId":481,
+			"dataSourceId":481, # doris
 			"db":"",
 			"sql":sql,
-			"type":0,
+			"type":0, # 当值=1时,下载 domain.com/adhoc/query/download/{{task_id}};拿下载链接
 			"email":self.email,
 			"sqlConf":""
 			}
